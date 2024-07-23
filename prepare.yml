@@ -2,6 +2,10 @@
   hosts: localhost
   connection: local
   gather_facts: true
+
+  vars:
+    software_config_json_file: "{{ role_path }}/../../../input/software_config.json"
+    
   tasks:
     - name: Print all available facts
       ansible.builtin.debug:
