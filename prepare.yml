@@ -13,5 +13,5 @@
 
     - name: generate input file using jinja2 as per input variables
       ansible.builtin.template:
-        src: "{{ ansible_distribution }}_software_config.json.j2"
+        src: "{{ ansible_distribution.toLower() }}_software_config.json.j2"
         dest: "{{ software_config_json_file }}"
