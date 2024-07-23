@@ -5,7 +5,7 @@
 
   vars:
     software_config_json_file: "input/software_config.json"
-    softwarelist: "{{ lookup('ansible.builtin.env', 'softwarelist') }}"
+    softwarelist: "{{ lookup('ansible.builtin.env', 'softwarelist').split(",") }}"
 
   tasks:
     - name: Print all available facts
