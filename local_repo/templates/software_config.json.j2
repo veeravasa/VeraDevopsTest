@@ -1,0 +1,6 @@
+{
+    "cluster_os_type": "{{ lookup('ansible.builtin.env', 'os_type') }}",
+    "cluster_os_version": "{{ lookup('ansible.builtin.env', 'os_version') }}",    
+    "repo_config": "{{ lookup('ansible.builtin.env', 'repo_config') }}"
+
+}

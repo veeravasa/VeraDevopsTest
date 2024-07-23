@@ -20,6 +20,11 @@
     rocm_version: "omnia_default"
     bcm_roce_libraries_version: "omnia_default"
 
+- name: generate input file using jinja2 as per input variables
+  ansible.builtin.template:
+    src: software_config.json.j2
+    dest: "{{ software_config_json_file }}"  
+
 - name: Check that the software_config.json exists
   ansible.builtin.stat:
     path: "{{ software_config_json_file }}"
