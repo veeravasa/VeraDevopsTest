@@ -1,10 +1,11 @@
 {
     "cluster_os_type": "{{ lookup('ansible.builtin.env', 'os_type') }}",
-    "cluster_os_version": "{{ lookup('ansible.builtin.env', 'os_version') }}",    
-    "repo_config": "{{ lookup('ansible.builtin.env', 'repo_config') }}"
-
+    "cluster_os_version": "{{ lookup('ansible.builtin.env', 'os_version') }}",
+    "repo_config": "partial",
     "softwares": [
-        {"name_pytorch": "{{ lookup('ansible.builtin.env', 'name_pytorch') }}"    },
-        {"name_tensorflow": "{{ lookup('ansible.builtin.env', 'name_tensorflow') }}" }
+    {% for softwareitem in softwarelist %}
+        {"name": "{{ softwareitem }}"},
+    {% endfor %}
+        {"name": "tensorflow"}
     ]
 }
