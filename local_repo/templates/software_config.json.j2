@@ -3,4 +3,8 @@
     "cluster_os_version": "{{ lookup('ansible.builtin.env', 'os_version') }}",    
     "repo_config": "{{ lookup('ansible.builtin.env', 'repo_config') }}"
 
+    "softwares": [
+        {"name_pytorch": "{{ lookup('ansible.builtin.env', 'name_pytorch') }}"    },
+        {"name_tensorflow": "{{ lookup('ansible.builtin.env', 'name_tensorflow') }}" }
+    ]
 }
