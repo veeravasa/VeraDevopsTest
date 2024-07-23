@@ -128,7 +128,7 @@ echo "os_version: $os_version"
 #    cp "$dir_path/examples/rocky_software_config.json" "$dir_path/input/software_config.json"
 #fi
 
-sed -i "s/\"cluster_os_version\": .*/\"cluster_os_version\": $os_version,/" "$dir_path/input/software_config.json"
+#sed -i "s/\"cluster_os_version\": .*/\"cluster_os_version\": $os_version,/" "$dir_path/input/software_config.json"
 
 echo ""
 echo ""
