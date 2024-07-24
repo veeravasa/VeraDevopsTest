@@ -3,9 +3,9 @@
     "cluster_os_version": "{{ lookup('ansible.builtin.env', 'os_version') }}",
     "repo_config": "partial",
     "softwares": [
-    {% for softwareitem in softwarelist %}
-        {"name": "{{ softwareitem }}"},
+    {% for softwarelist in Software_list %}
+        {"name": "{{ softwarelist }}"},
     {% endfor %}
-        {"name": "tensorflow"}
+     #   {"name": "tensorflow"}
     ]
 }

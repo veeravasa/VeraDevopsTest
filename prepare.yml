@@ -7,10 +7,10 @@
     software_config_json_file: "input/software_config.json"
     softwarelist: "{{ lookup('ansible.builtin.env', 'softwarelist').split(',') }}"
 
-  tasks:
-    - name: Print all available facts
-      ansible.builtin.debug:
-        var: ansible_facts
+#  tasks:
+#    - name: Print all available facts
+#      ansible.builtin.debug:
+#        var: ansible_facts
 
     - name: generate input file using jinja2 as per input variables
       ansible.builtin.template:
