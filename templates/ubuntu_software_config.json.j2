@@ -4,8 +4,8 @@
     "repo_config": "partial",
     "softwares": [
     {% for softwarelist in Software_list %}
-        {"name": "{{ softwarelist }}", "version": "{ version }"},
+        {"name": "{{ softwarelist }}", "version": "{{ version }}"},
     {% endfor %}
-        
+        {" "}
     ]
 }
