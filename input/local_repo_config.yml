@@ -23,7 +23,8 @@
 # Please make sure assigned partition has enough space.
 # Ensure 755 permission is given to repo_store_path if user intends to use nfs share mount for repo_store_path
 # Default: /omnia_repo
-repo_store_path: "/omnia_repo"
+# repo_store_path: "/omnia_repo"
+repo_store_path: "{{ lookup('ansible.builtin.env', 'repo_store_path') }}"
 
 # Optional
 # This variable accepts the repository urls of the user which contains the packages required for the cluster.
@@ -42,7 +43,7 @@ repo_store_path: "/omnia_repo"
 # Example:
 # user_repo_url:
 #   - {url: "http://user_repo.com/x86_64/os/",gpgkey: "http://user_repo.com/x86_64/os/RPM-GPG-KEY"}
-user_repo_url:
+user_repo_url: "{{ look}}"
 
 # Optional
 # This variable accepts the registry url along with port of the user which contains the images required for cluster.
