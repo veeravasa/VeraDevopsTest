@@ -17,12 +17,7 @@
     tensorflow: "{{ lookup('env', 'TENSORFLOW') | from_json }}"
 
   tasks:
-    - name: Print all available facts
-      ansible.builtin.debug:
-        var: ansible_facts
-
     - name: generate input file using jinja2 as per input variables
       ansible.builtin.template:
         src: "{{ ansible_distribution | lower }}_software_config.json.j2"
         dest: "{{ software_config_json_file }}"
-
