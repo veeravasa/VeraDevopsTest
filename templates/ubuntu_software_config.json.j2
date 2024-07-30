@@ -4,8 +4,11 @@
     "repo_config": "partial",
     "softwares": [
     {% for softwarelist in Software_list %}
-        {"name": "{{ softwarelist }}"}{% if not loop.last %},{% endif %},
+        {
+            "name": "{{ softwarelist }}",
+            }{% if not loop.last %},{% endif %}
     {% endfor %}
-    ]    
+    ]
+    
 }
 
