@@ -5,6 +5,7 @@
     "softwares": [
     {% for softwarelist in Software_list %}
         {"name": "{{ softwarelist }}"},
-   
+    {% endfor %}
+        {" "}
     ]
 }
