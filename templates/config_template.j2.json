@@ -1,0 +1,29 @@
+{
+    "cluster_os_type": "{{ cluster_os_type }}",
+    "cluster_os_version": "{{ cluster_os_version }}",
+    "repo_config": "{{ repo_config }}",
+    "softwares": [
+        {% for software in softwares %}
+        {
+            "name": "{{ software.name }}",
+            "version": "{{ software.version }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ],
+    "bcm_roce": [
+        {% for lib in bcm_roce %}
+        {
+            "name": "{{ lib.name }}",
+            "version": "{{ lib.version }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ],
+    "amdgpu": [
+        {% for lib in amdgpu %}
+        {
+            "name": "{{ lib.name }}",
+            "version": "{{ lib.version }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ]
+}
