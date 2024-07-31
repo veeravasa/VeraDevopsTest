@@ -12,4 +12,4 @@
     - name: Render the JSON configuration file from template
       template:
         src: config_template.j2
-        dest: /path/to/output/config.json
+        dest: /home/omnia/config.json
