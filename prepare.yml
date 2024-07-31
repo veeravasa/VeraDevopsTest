@@ -10,7 +10,7 @@
     cluster_os_type: "{{ lookup('env', 'CLUSTER_OS_TYPE') }}"
     cluster_os_version: "{{ lookup('env', 'CLUSTER_OS_VERSION') }}"
     repo_config: "{{ lookup('env', 'REPO_CONFIG') }}"
-    softwares: "{{ lookup('env', 'SOFTWARES') | from_json }}"
+    softwares: "{{ lookup('env', 'softwares') | from_json }}"
     bcm_roce: "{{ lookup('env', 'BCM_ROCE') | from_json }}"
     amdgpu: "{{ lookup('env', 'AMDGPU') | from_json }}"
     pytorch: "{{ lookup('env', 'PYTORCH') | from_json }}"
