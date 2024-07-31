@@ -5,24 +5,17 @@
 
   vars:
     software_config_json_file: "input/software_config.json"
-    Software_list: "{{ lookup('ansible.builtin.env', 'softwarelist').split(',') }}"
-    versions: "{{ lookup('ansible.builtin.env', 'versions') }}"
-    os_version: "{{ lookup('ansible.builtin.env', 'os_version') }}"
-    bcm_roce_version: "{{ lookup('ansible.builtin.env', 'bcm_roce_version') }}"
+    softwares: "{{ lookup('ansible.builtin.env', 'softwares') }}" 
     cluster_os_type : "{{ lookup('ansible.builtin.env', 'cluster_os_type ') }}"
     cluster_os_version: "{{ lookup('ansible.builtin.env', 'cluster_os_version') }}"
     repo_config: "{{ lookup('ansible.builtin.env', 'repo_config') }}"
-    softwares: "{{ lookup('ansible.builtin.env', 'softwares') }}"        
     bcm_roce: "{{ lookup('ansible.builtin.env', 'bcm_roce') }}"
-    amdgpu: "{{ lookup('ansible.builtin.env', 'amdgpu') }}"
-    pytorch: "{{ lookup('ansible.builtin.env', 'pytorch') }}"
-    tensorflow: "{{ lookup('ansible.builtin.env', 'tensorflow') }}"
 
 
   tasks:
-    - name: Print all available facts
-      ansible.builtin.debug:
-        var: ansible_facts
+#    - name: Print all available facts
+#      ansible.builtin.debug:
+#        var: ansible_facts
 
     - name: generate input file using jinja2 as per input variables
       ansible.builtin.template:

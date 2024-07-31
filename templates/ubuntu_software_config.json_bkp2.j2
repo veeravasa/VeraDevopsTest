@@ -26,14 +26,14 @@
   "pytorch": [
     {% for item in pytorch %}
     {
-      "name": "{{ item.name }}"{% if item.version %}, "version": "{{ item.version }}"{% endif %}
+      "name": "{{ item.name }}"
     }{% if not loop.last %},{% endif %}
     {% endfor %}
   ],
   "tensorflow": [
     {% for item in tensorflow %}
     {
-      "name": "{{ item.name }}"{% if item.version %}, "version": "{{ item.version }}"{% endif %}
+      "name": "{{ item.name }}"
     }{% if not loop.last %},{% endif %}
     {% endfor %}
   ]
