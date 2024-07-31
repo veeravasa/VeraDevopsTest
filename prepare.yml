@@ -11,9 +11,7 @@
     repo_config: "{{ lookup('ansible.builtin.env', 'repo_config') }}"
     bcm_roce: "{{ lookup('ansible.builtin.env', 'bcm_roce') }}"
     amdgpu: "{{ lookup('ansible.builtin.env', 'amdgpu') }}"
-    bcm_roce: "{{ lookup('ansible.builtin.env', 'bcm_roce') }}"
-    pytorch: "{{ lookup('ansible.builtin.env', 'pytorch') }}"
-    tensorflow: "{{ lookup('ansible.builtin.env', 'tensorflow') }}"
+   
 
 
   tasks:
