@@ -6,7 +6,11 @@
         {% for software in softwares %}
         {
             "name": "{{ software.name }}",
+            {% if software.version is defined %}
             "version": "{{ software.version }}"
+            {% else %}
+            "version": "default"
+            {% endif %}
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ],
@@ -23,6 +27,20 @@
         {
             "name": "{{ lib.name }}",
             "version": "{{ lib.version }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ],
+    "pytorch": [
+        {% for lib in pytorch %}
+        {
+            "name": "{{ lib.name }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ],
+    "tensorflow": [
+        {% for lib in tensorflow %}
+        {
+            "name": "{{ lib.name }}"
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ]

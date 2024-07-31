@@ -8,6 +8,8 @@
     softwares: "{{ lookup('env', 'SOFTWARES') | from_json }}"
     bcm_roce: "{{ lookup('env', 'BCM_ROCE') | from_json }}"
     amdgpu: "{{ lookup('env', 'AMDGPU') | from_json }}"
+    pytorch: "{{ lookup('env', 'PYTORCH') | from_json }}"
+    tensorflow: "{{ lookup('env', 'TENSORFLOW') | from_json }}"
   tasks:
     - name: Render the JSON configuration file from template
       template:
