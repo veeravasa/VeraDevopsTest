@@ -18,7 +18,3 @@
         dest: /home/omnia/config.json
 
 
-pytorch_dependencies: "{{ lookup('env', 'PYTORCH_DEPENDENCIES_JSON') | default('[]') | from_json }}"
-    tensorflow_dependencies: "{{ lookup('env', 'TENSORFLOW_DEPENDENCIES_JSON') | default('[]') | from_json }}"
-  tasks:
-
