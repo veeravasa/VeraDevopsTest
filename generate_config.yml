@@ -6,15 +6,13 @@
     cluster_os_version: "{{ lookup('env', 'CLUSTER_OS_VERSION') }}"
     repo_config: "{{ lookup('env', 'REPO_CONFIG') }}"
     softwares: "{{ lookup('env', 'SOFTWARES') | from_json }}"
-    bcm_roce: "{{ lookup('env', 'BCM_ROCE') }}"
-    amdgpu: "{{ lookup('env', 'AMDGPU') | from_json }}"
-    pytorch: "{{ lookup('env', 'PYTORCH_DEPENDENCIES') | from_json }}"
-    tensorflow: "{{ lookup('env', 'TENSORFLOW_DEPENDENCIES') | from_json }}"
+    bcm_roce_libraries: "{{ lookup('env', 'bcm_roce_libraries') }}"
+    amdgpu_libraries: "{{ lookup('env', 'amdgpu_libraries') }}"
+    pytorch: "{{ lookup('env', 'pytorch_dependencies') }}"
+    tensorflow_dependencies: "{{ lookup('env', 'tensorflow_dependencies') }}"
     version: "{{ lookup('env', 'version') | from_json }}"
   tasks:
     - name: Render the JSON configuration file from template
       template:
         src: config_template.j2
         dest: /home/omnia/config.json
-
-

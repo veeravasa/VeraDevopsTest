@@ -21,24 +21,22 @@
         }
     ],
     "amdgpu": [
-        {% for lib in amdgpu %}
         {
-            "name": "{{ lib.name }}",
-            "version": "{{ lib.version }}"
-        }{% if not loop.last %},{% endif %}
-        {% endfor %}
+            "name": "{{ bcm_roce.split('-')[0] }}",
+            "version": "{{ bcm_roce.split('-')[1] }}"
+        }
     ],
     "pytorch": [
-        {% for lib in pytorch %}
+        {% for lib in pytorch_dependencies %}
         {
-            "name": "{{ lib.name }}"
+            "name": "{{ lib }}"
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ],
     "tensorflow": [
-        {% for lib in tensorflow %}
+        {% for lib in tensorflow_dependencies %}
         {
-            "name": "{{ lib.name }}"
+            "name": "{{ lib }}"
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ]
