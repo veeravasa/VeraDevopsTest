@@ -27,14 +27,14 @@
         }
     ],
     "pytorch": [
-        {% for lib in pytorch_dependencies %}
+        {% for lib in pytorch_dependencies.split(',') %}
         {
             "name": "{{ lib }}"
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ],
     "tensorflow": [
-        {% for lib in tensorflow_dependencies %}
+        {% for lib in tensorflow_dependencies.split(',') %}
         {
             "name": "{{ lib }}"
         }{% if not loop.last %},{% endif %}
