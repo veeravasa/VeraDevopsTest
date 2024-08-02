@@ -8,7 +8,7 @@
     softwares: "{{ lookup('env', 'SOFTWARES') | from_json }}"
     bcm_roce_libraries: "{{ lookup('env', 'bcm_roce_libraries') }}"
     amdgpu_libraries: "{{ lookup('env', 'amdgpu_libraries') }}"
-    pytorch: "{{ lookup('env', 'pytorch_dependencies') }}"
+    pytorch_dependencies: "{{ lookup('env', 'pytorch_dependencies') }}"
     tensorflow_dependencies: "{{ lookup('env', 'tensorflow_dependencies') }}"
     version: "{{ lookup('env', 'version') | from_json }}"
   tasks:
