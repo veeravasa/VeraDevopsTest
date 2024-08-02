@@ -14,7 +14,7 @@
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ],
-    {% if bcm_roce in softwares % }
+    {% if "bcm_roce" in softwares % }
     "bcm_roce": [
         {
             "name": "{{ bcm_roce_libraries.split('-')[0] }}",
@@ -22,7 +22,7 @@
         }
     ],
     {% endif %}
-    {% if amdgpu in softwares % }
+    {% if "amdgpu" in softwares % }
     "amdgpu": [
         {
             "name": "{{ amdgpu_libraries.split('-')[0] }}",
@@ -30,7 +30,7 @@
         }
     ],
     {% endif %}
-    {% if pytorch in softwares % }
+    {% if "pytorch" in softwares % }
     "pytorch": [
         {% for lib in pytorch_dependencies.split(',') %}
         {
@@ -39,7 +39,7 @@
         {% endfor %}
     ],
     {% endif %}
-    {% if tensorflow in softwares % }
+    {% if "tensorflow" in softwares % }
     "tensorflow": [
         {% for lib in tensorflow_dependencies.split(',') %}
         {
