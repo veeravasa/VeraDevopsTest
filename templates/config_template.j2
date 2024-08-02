@@ -15,12 +15,10 @@
         {% endfor %}
     ],
     "bcm_roce": [
-        {% for lib in bcm_roce %}
         {
-            "name": "{{ lib.name }}",
-            "version": "{{ lib.version }}"
-        }{% if not loop.last %},{% endif %}
-        {% endfor %}
+            "name": "{{ bcm_roce.split('-')[0] }}",
+            "version": "{{ bcm_roce.split('-')[1] }}"
+        }
     ],
     "amdgpu": [
         {% for lib in amdgpu %}
