@@ -14,7 +14,7 @@
 ---
 
 #***********************************************************************
-# DO NOT REMOVE OR COMMENT OUT ANY LINES IN THIS FILE.                  
+# DO NOT REMOVE OR COMMENT OUT ANY LINES IN THIS FILE.
 # SIMPLY APPEND THE REQUIRED VALUES AGAINST THE PARAMETER OF YOUR CHOICE.
 #***********************************************************************
 
@@ -24,23 +24,23 @@ idrac_telemetry_support: false
 
 # This variable is used to start or stop omnia telemetry
 # Accepted values:  true or false
-# If omnia_telemetry_support is true, then at least one of collect_regular_metrics or collect_health_check_metrics or collect_gpu_metrics should be true, to collect metrics
+# If omnia_telemetry_support is true, then at least one of collect_regular_metrics or collect_health_check_metrics or collect_gpu_metrics should be true, to >
 # If omnia_telemetry_support is false, telemetry acquisition will be stopped
-omnia_telemetry_support: false
+omnia_telemetry_support: true
 
 # This variable is used to enable visualizations on grafana
 # Accepted values:  true or false
-visualization_support: false
+visualization_support: true
 
-##### BELOW VARIABLES ARE MANDATORY IF telemetry ENTRY is PRESENT in software_config.json AND EITHER idrac_telemetry_support OR omnia_telemetry_support OR visualization_support IS true
+##### BELOW VARIABLES ARE MANDATORY IF telemetry ENTRY is PRESENT in software_config.json AND EITHER idrac_telemetry_support OR omnia_telemetry_support OR vi>
 ###-----CONFIGURATIONS FOR KUBERNETES ON CONTROL PLANE FOR TELEMETRY SUPPORT------
 # These addresses will be used by Loadbalancer for assigning External IPs to K8s services running on control plane
 # Make sure the IP range is not assigned to any node in the cluster.
-# If admin_nic network provided in network_spec.yml is in 10.11.0.0 network, then pod_external_ip_range should be in same netwwork like "10.11.0.60-10.11.0.70"
+# If admin_nic network provided in network_spec.yml is in 10.11.0.0 network, then pod_external_ip_range should be in same netwwork like "10.11.0.60-10.11.0.7>
 # Acceptable formats: "10.11.0.100-10.11.0.150" , "10.11.0.0/16"
 # Provide a different ip range than that of external ip range entered in omnia_config.yml
 # Mandatory Field
-pod_external_ip_range: ""
+pod_external_ip_range: "10.15.0.0/16"
 
 # Kubernetes SDN network.
 # Accepted values: "calico" or "flannel".
@@ -69,7 +69,7 @@ timescaledb_user: "omnia"
 # The password must not contain -,\, ',",@
 # The Length of the password should be at least 2 characters.
 # Mandatory field
-timescaledb_password: ""
+timescaledb_password: "Dell1234"
 
 ##### BELOW VARIABLES ARE MANDATORY WHEN idrac_telemetry_support IS SET TO true
 # The username for idrac
@@ -88,19 +88,19 @@ idrac_password: ""
 # The Length of the username should be at least 2 characters.
 # The username should not be kept 'root'.
 # Mandatory field when idrac_telemetry_support is true
-mysqldb_user: ""
+mysqldb_user: "sqluser"
 
 # Password used for connecting to mysql db
 # The password must not contain -,\, ',"
 # The Length of the password should be at least 2 characters.
 # Mandatory field when idrac_telemetry_support is true
-mysqldb_password: ""
+mysqldb_password: "sqluser"
 
 # Password used for connecting to timescale db for root user
 # The password must not contain -,\, ',"
 # The Length of the password should be at least 2 characters.
 # Mandatory field when idrac_telemetry_support is true
-mysqldb_root_password: ""
+mysqldb_root_password: "Dell1234"
 
 ##### BELOW VARIABLES ARE MANDATORY WHEN omnia_telemetry_support IS SET TO true
 # This variable denotes the time interval of telemetry data collection from required computue nodes
@@ -125,7 +125,7 @@ collect_gpu_metrics: true
 
 ### ADVANCE CONFIGURATIONS FOR OMNIA TELEMETRY ###
 # This variable is used to set an appropriate time interval for all compute nodes so that they do not congest the admin network
-# A random number between 0 and fuzzy_offset gets added with omnia_telemetry_collection_interval value to decide individual compute node's telemetry data collection interval
+# A random number between 0 and fuzzy_offset gets added with omnia_telemetry_collection_interval value to decide individual compute node's telemetry data col>
 # This variable accepts input in seconds
 # Default value is 60
 # Example 1: fuzzy_offset: 60
@@ -146,13 +146,13 @@ metric_collection_timeout: 5
 # The username for grafana UI
 # The length of username should be at least 5
 # The username must not contain -,\, ',"
-grafana_username: ""
+grafana_username: "grafana"
 
 # Password used for grafana UI
 # The length of the password should be at least 5
 # The password must not contain -,\, ',"
 # The password should not be kept 'admin'
-grafana_password: ""
+grafana_password: "grafana"
 
 # At this location grafana persistent volume will be created.
 # If using telemetry, all telemetry related files will also be stored and
