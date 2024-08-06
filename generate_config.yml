@@ -18,7 +18,7 @@
 
     - name: Render the JSON configuration file from template
       debug:
-        msg: "pytorch_dependencies: {{ pytorch_dependencies }}"
+        msg: "softwares: softwares
 
     - name: Render the JSON configuration file from template
       template:
