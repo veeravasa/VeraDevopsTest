@@ -14,4 +14,13 @@
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ]
+    {% if ("bcm_roce" in softwares) % }
+    ,
+    "bcm_roce": [
+        {
+            "name": "{{ bcm_roce_libraries.split('-')[0] }}",
+            "version": "{{ bcm_roce_libraries.split('-')[1] }}"
+        }
+    ]
+    {% endif %}
 }
