@@ -2,6 +2,7 @@
 - name: Generate JSON config file
   hosts: localhost
   vars:
+    software_config_json_file: "input/software_config.json"
     cluster_os_type: "{{ lookup('env', 'CLUSTER_OS_TYPE') }}"
     cluster_os_version: "{{ lookup('env', 'CLUSTER_OS_VERSION') }}"
     repo_config: "{{ lookup('env', 'REPO_CONFIG') }}"
