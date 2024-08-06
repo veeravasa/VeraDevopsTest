@@ -14,6 +14,8 @@
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ]
+    {% if "amdgpu" in softwares|map(attribute='name') %}
+    ,
     "amdgpu": [
         {
             "name": "{{ amdgpu_libraries[0] }}",
@@ -27,15 +29,20 @@
             "name": "{{ bcm_roce_libraries[0] }}",
             "version": "{{ bcm_roce_libraries[1] }}"
         }
-    ],
+    ]
     {% endif %}
+    {% if "pytorch" in softwares|map(attribute='name') %}
+    ,
     "pytorch": [
         {% for pytorch_dep in pytorch_dependencies %}
         {
             "name": "{{ pytorch_dep }}"
         }{% if not loop.last %},{% endif %}
         {% endfor %}
-    ],
+    ]
+    {% endif %}
+    {% if "tensorflow" in softwares|map(attribute='name') %}
+    ,
     "tensorflow": [
         {% for tensorflow_dep in tensorflow_dependencies %}
         {
@@ -43,4 +50,5 @@
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ]
+    {% endif %}
 }
