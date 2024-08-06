@@ -18,8 +18,8 @@
     ,
     "bcm_roce": [
         {
-            "name": "{{ bcm_roce_libraries.split('-')[0] }}",
-            "version": "{{ bcm_roce_libraries.split('-')[1] }}"
+            "name": "{{ bcm_roce_libraries[0] }}",
+            "version": "{{ bcm_roce_libraries[1] }}"
         }
     ]
     {% endif %}
