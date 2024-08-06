@@ -20,7 +20,7 @@
             "version": "{{ amdgpu_libraries[1] }}"
         }
     ]
-    {% if "bcm_roce" in softwares%}
+    {% if "bcm_roce" in softwares|map(attribute='name') %}
     ,
     "bcm_roce": [
         {
