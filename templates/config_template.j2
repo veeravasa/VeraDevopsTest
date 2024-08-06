@@ -14,13 +14,24 @@
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ]
-    {% if ("bcm_roce" in softwares) % }
+    {% if ("pytorch" in softwares) % }
     ,
-    "bcm_roce": [
+    "pytorch": [
+        {% for lib in pytorch_dependencies %}
         {
-            "name": "{{ bcm_roce_libraries[0] }}",
-            "version": "{{ bcm_roce_libraries[1] }}"
-        }
+            "name": "{{ lib }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ],
+    {% endif %}
+    {% if ("tensorflow" in softwares) % }
+    ,
+    "tensorflow": [
+        {% for lib in tensorflow_dependencies %}
+        {
+            "name": "{{ lib }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
     ]
     {% endif %}
 }
