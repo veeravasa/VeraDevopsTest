@@ -8,8 +8,8 @@
     softwares: "{{ lookup('env', 'SOFTWARES') | from_json }}"
     bcm_roce_libraries: "{{ lookup('env', 'bcm_roce_libraries').split(',') }}"
     amdgpu_libraries: "{{ lookup('env', 'amdgpu_libraries').split(',') }}"
-    pytorch_dependencies: "{{ lookup('env', 'pytorch_dependencies') }}"
-    tensorflow_dependencies: "{{ lookup('env', 'tensorflow_dependencies') }}"
+    pytorch_dependencies: "{{ lookup('env', 'pytorch_dependencies').split(',') }}"
+    tensorflow_dependencies: "{{ lookup('env', 'tensorflow_dependencies').split(',') }}"
     version: "{{ lookup('env', 'version') | from_json }}"
   tasks:
     - name: Render the JSON configuration file from template
