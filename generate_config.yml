@@ -6,7 +6,7 @@
     cluster_os_version: "{{ lookup('env', 'CLUSTER_OS_VERSION') }}"
     repo_config: "{{ lookup('env', 'REPO_CONFIG') }}"
     softwares: "{{ lookup('env', 'SOFTWARES') | from_json }}"
-    bcm_roce_libraries: "{{ lookup('env', 'bcm_roce_libraries').split(',') }}"
+    bcm_roce_libraries: "name: {{ lookup('env', 'bcm_roce_libraries').split(',')[0], version: {{ lookup('env', 'bcm_roce_libraries').split(',')[1] | to_json }}"
     amdgpu_libraries: "{{ lookup('env', 'amdgpu_libraries').split(',') }}"
     pytorch_dependencies: "{{ lookup('env', 'pytorch_dependencies') }}"
     tensorflow_dependencies: "{{ lookup('env', 'tensorflow_dependencies') }}"
