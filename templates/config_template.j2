@@ -14,12 +14,12 @@
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ]
-    {% if ("pytorch" in softwares) % }
+    {% if ("pytorch" in softwares) %}
     ,
     "pytorch": [
-        {% for lib in pytorch_dependencies %}
+        {% for pytorch_dep in pytorch_dependencies %}
         {
-            "name": "{{ lib }}"
+            "name": "{{ pytorch_dep }}"
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ],
@@ -27,9 +27,9 @@
     {% if ("tensorflow" in softwares) % }
     ,
     "tensorflow": [
-        {% for lib in tensorflow_dependencies %}
+        {% for tensorflow_dep in tensorflow_dependencies %}
         {
-            "name": "{{ lib }}"
+            "name": "{{ tensorflow_dep }}"
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ]
