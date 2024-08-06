@@ -17,6 +17,10 @@
         msg: "bcm_roce_libraries: {{ bcm_roce_libraries }}"
 
     - name: Render the JSON configuration file from template
+      debug:
+        msg: "pytorch_dependencies: {{ pytorch_dependencies }}"
+
+    - name: Render the JSON configuration file from template
       template:
         src: config_template.j2
         dest: /home/omnia/config.json
