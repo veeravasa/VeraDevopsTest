@@ -1,70 +1,52 @@
 New Features
-============
+===========
 
-* OS enablement
+*	`Extensive Telemetry and Monitoring <../Roles/Telemetry/index.html>`_ has been added to the Omnia stack, intended for consumption by customers that are using Dell systems and Omnia to provide SaaS/IaaS solutions.  These include, but are not limited to:
 
-    * Ubuntu 22.04.3 LTS with GA kernel and HWE kernel support
+    –	CPU Utilization and status
 
-    * Ubuntu 20.04.6 LTS
+    –	GPU utilization
 
-* Enablement for AI
+    –	Node Count
 
-    * Install AMD ROCm SDK on host OS
+    –	Network Packet I/O
 
-    * Install Vanilla Kubernetes stack v1.26
+    –	HDD capacity and free space
 
-    * Install GPU device plugin for Kubernetes
+    –	Memory capacity and utilization
 
-        - GPU device plugin for AMD
-        - GPU device plugin for NVIDIA
+    –	Queued and Running Job Count
 
-    * Submit Kubernetes jobs as a non-admin user
+    –	User Count
 
-    * Install Kubeflow
+    –	Cluster HW Health Checks (PCIE, NVLINK, BMC, Temps)
 
-    * Install vLLM Inference platform
+    –	Cluster SW Health Checks (dmesg, BeeGFS, k8s nodes/pods, mySQL on control plane)
 
-    * Install Kserve Inference platform
+*	Metrics are extracted using a combination of the following: PSUtil, Smartctl, beegfs-ctl, nvidia-smi, rocm-smi.
 
-    * Install Jupyter Notebook
+*	Telemetry and health checks can be optionally disabled.
 
-    * Install PyTorch
+*	`Log Aggregation <../Logging/ControlPlaneLogs.html>`_ via xCAT syslog:
 
-    * Install TensorFlow
+    –	Aggregated on control plane, grouping default is “severity” with others available.
 
-* Additional Features
+    –	Uses Grafani-Loki for viewing.
 
-    * Offline package repo and image registry creation
+*	Hardware Support: Intel E810 NIC, ConnectX-5/6 NICs.
 
-    * Classless IP Addressing
+    *	Omnia github now hosts a “genesis” image with this functionality baked in for initial bootup.
 
-        * Additional NIC configuration
-        * IP rule assignment
+*	Host aliasing for Scheduler and IPA authentication.
 
-    * LDAP client and server configuration
+*	Login and Manager Node access from both public and private NIC.
 
-    * One-off Utility to add or remove a node
+*	Validation check enhancements:
 
-    * HPC/AI cluster inventory partitioning
+    *	Rearranged to occur as early as possible.
 
-        - CPU inventory
-        - AMD GPU inventory
-        - NVIDIA GPU inventory
+    *	Isolate checks when running smaller playbooks.
 
-    * Smoother Omnia upgrades on the control plane
+*	Docker Registry Creation.
 
-    * Slurm in configless or NFS in RHEL/Rocky Linux
-
-    * OpenMPI and UCX installation in share partition
-
-    * Utility to add/modify Kernel command-line parameters
-
-    * Install Kubernetes plugin for the RoCE NIC
-
-    * Update kernels using the software update utility
-
-
-
-
-
-
+* Integration of apptainer for `containerized HPC benchmark execution <../InstallationGuides/Benchmarks/index.html>`_.

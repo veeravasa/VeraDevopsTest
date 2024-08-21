@@ -12,32 +12,19 @@ Timescale DB
 
     .. image:: ../../images/TimescaleDB_Ports.png
 
-3. Connect to DB (``psql -h <EXTERNAL-IP:of timescaledb> -p <timescaledb_port> -U <timescaledb_username> -d telemetry_metrics``)
+3. Connect to DB (``psql -h <host_ip> -p <timescaledb_port> -U <timescaledb_username> -d telemetry_metrics``)
 
 .. note:: You will be prompted for the timescaledb password before being given access.
 
 4. Query the database using SQL syntax.
 
-Example:
-
-For Omnia telemetry: ::
+Eg: ::
 
     select * from omnia_telemetry.metrics;
-
-
-For iDRAC telemetry: ::
-
     select * from public.timeseries_metrics;
 
-*Query for Omnia telemetry*
-
-    .. image:: ../../images/TimescaleDB_table.png
-
-*Query for iDRAC telemetry*
-
-    .. image:: ../../images/publictimeseries.png
-
-For the entire set of iDRAC telemetry metrics, `click here <https://github.com/dell/iDRAC-Telemetry-Reference-Tools>`_.
+.. image:: ../../images/TimescaleDB_table.png
+.. image:: ../../images/publictimeseries.png
 
 **Data retention policy**
 

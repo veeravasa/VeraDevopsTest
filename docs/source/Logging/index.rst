@@ -1,5 +1,5 @@
-Omnia Logs
-===========
+Logging
+=========
 
 .. toctree::
     LogManagement

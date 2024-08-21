@@ -26,4 +26,4 @@
   rescue:
     - name: Failed to update network details in DB
       ansible.builtin.fail:
-        msg: "{{ update_network_db_fail_msg }}"
+        msg: "{{ update_network_db_fail_msg }}" 

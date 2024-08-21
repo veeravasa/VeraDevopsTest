@@ -17,7 +17,7 @@
   ansible.builtin.command: chdef all postscripts="syslog,remoteshell,syncfiles"
   changed_when: true
 
-- name: Configure postscripts
+- name: Configure ubuntu postscripts
   ansible.builtin.include_tasks: "{{ role_path }}/../{{ control_plane_os }}/tasks/configure_postscripts.yml"
 
 - name: Configure ntp postscripts
