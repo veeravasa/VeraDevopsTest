@@ -12,8 +12,15 @@
     pytorch_dependencies: "{{ lookup('env', 'pytorch_dependencies').split(',') }}"
     tensorflow_dependencies: "{{ lookup('env', 'tensorflow_dependencies').split(',') }}"
     version: "{{ lookup('env', 'version') | from_json }}"
-    
   tasks:
+    - name: Render the JSON configuration file from template
+      debug:
+        msg: "bcm_roce_libraries: {{ bcm_roce_libraries }}"
+
+    - name: Render the JSON configuration file from template
+      debug:
+        msg: "softwares: {{ softwares }}"
+
     - name: Render the JSON configuration file from template
       template:
         src: config_template.j2

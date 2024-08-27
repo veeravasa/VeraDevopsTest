@@ -74,7 +74,7 @@ if [[ ! -z "$executable_path" && "$executable_path" = "/usr/bin/ansible" ]]; the
 fi
 
 installed_ansible_version=$( ansible --version 2>/dev/null | grep -oP 'ansible \[core \K\d+\.\d+' | sed 's/]//')
-target_ansible_version="2.14"
+target_ansible_version="2.15"
 
 if [[ ! -z "$installed_ansible_version" && "$(echo -e "$installed_ansible_version\n$target_ansible_version" | sort -V | tail -n1)" != "$target_ansible_version" ]];
 then
